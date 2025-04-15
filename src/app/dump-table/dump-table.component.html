@@ -1,0 +1,28 @@
+<mat-card style="padding: 16px; margin: 16px 0;">
+    <h2>Données du dump</h2>
+    <div style="margin-top:16px;">
+        <input type="text" placeholder="Rechercher une adresse" [(ngModel)]="dumpDataService.searchQuery"
+            style="width:100%; padding:8px;" />
+    </div>
+    <div *ngIf="dumpDataService.filteredData.length" class="table-container" style="margin-top:16px;">
+        <div class="data-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="padding:4px; border-bottom:1px solid #ccc; text-align:left;">Type</th>
+                        <th style="padding:4px; border-bottom:1px solid #ccc; text-align:left;">Adresse</th>
+                        <th style="padding:4px; border-bottom:1px solid #ccc; text-align:left;">Données</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of dumpDataService.filteredData">
+                        <td style="padding:4px; border-bottom:1px solid #eee;">{{ row.type }}</td>
+                        <td style="padding:4px; border-bottom:1px solid #eee;">{{ row.address }}</td>
+                        <td style="padding:4px; border-bottom:1px solid #eee;">{{ row.data }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button mat-raised-button color="primary" style="margin-top:16px;" (click)="goBack()">Retour</button>
+</mat-card>
