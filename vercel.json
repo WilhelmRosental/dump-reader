@@ -1,17 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "dist/dump-reader/server/server.mjs",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": "dist/dump-reader/browser/**"
+        "includeFiles": ["dist/dump-reader/browser/**"]
       }
     }
   ],
   "routes": [
-    {
-      "handle": "filesystem"
-    },
     {
       "src": "/(.*)",
       "dest": "dist/dump-reader/server/server.mjs"
