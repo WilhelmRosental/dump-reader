@@ -14,7 +14,7 @@ import { DumpDataService, DumpRow } from '../dump-data.service';
     styleUrls: ['./dump-uploader.component.css']
 })
 export class DumpUploaderComponent {
-    @ViewChild('fileInput', { static: false }) fileInput!: ElementRef<HTMLInputElement>;
+    @ViewChild('fileInput', { static: true }) fileInput!: ElementRef<HTMLInputElement>;
 
     constructor(private router: Router, private dumpDataService: DumpDataService) { }
 
