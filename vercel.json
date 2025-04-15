@@ -1,10 +1,6 @@
 {
   "builds": [
     {
-      "src": "angular.json",
-      "use": "@vercel/angular"
-    },
-    {
       "src": "dist/dump-reader/server/server.mjs",
       "use": "@vercel/node",
       "config": {
